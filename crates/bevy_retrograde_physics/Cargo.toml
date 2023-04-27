@@ -1,8 +1,8 @@
 [package]
 name = "bevy_retrograde_physics"
-version = "0.3.0"
+version = "0.4.0"
 authors = ["Katharos Technology LLC."]
-edition = "2018"
+edition = "2021"
 
 license-file = "../../LICENSE.md"
 readme = "../../README.md"
@@ -19,13 +19,13 @@ categories = [
 
 [features]
 default = ["simd-stable"]
-debug = ["bevy_rapier2d/debug-render"]
+debug = ["bevy_rapier2d/debug-render-2d"]
 simd-stable = ["bevy_rapier2d/simd-stable"]
 simd-nightly = ["bevy_rapier2d/simd-nightly"]
 
 [dependencies]
-bevy = { version = "0.7", default-features = false }
-bevy_rapier2d = { version = "0.14.1" }
+bevy = { version = "0.10", default-features = false }
+bevy_rapier2d = { version = "0.21.0" }
 density-mesh-core = "1.5.0"
 density-mesh-image = "1.5.0"
-image = "0.23.0"
+image = "0.24.6"

@@ -2,7 +2,7 @@
 name = "bevy_retrograde"
 version = "0.4.0"
 authors = ["Katharos Technology LLC."]
-edition = "2018"
+edition = "2021"
 resolver = "2"
 
 license-file = "LICENSE.md"
@@ -27,11 +27,14 @@ members = ["crates/*"]
 
 [features]
 default = [
+    "wayland",
     "audio",
     "ldtk",
     "ui",
     "physics",
 ]
+x11 = ["bevy/x11"]
+wayland = ["bevy/wayland"]
 audio = ["bevy_kira_audio"]
 # text = ["bevy_retrograde_text"]
 ui = ["bevy_retrograde_ui"]
@@ -45,15 +48,16 @@ default-features = false
 features = [
     "bevy_winit",
     "png",
+#    "wayland",
 #    "x11",
 ]
 
 [dependencies]
-bevy_retrograde_macros = { version = "0.2", path = "crates/bevy_retrograde_macros" }
-bevy_kira_audio = { version = "0.10.0", optional = true }
-bevy_ecs_ldtk = { version = "0.10.0", features = ["atlas"], optional = true }
-bevy_retrograde_ui = { version = "0.3", path = "crates/bevy_retrograde_ui", optional = true }
-bevy_retrograde_physics = { version = "0.3", path = "crates/bevy_retrograde_physics", optional = true }
+bevy_retrograde_macros = { version = "0.3", path = "crates/bevy_retrograde_macros" }
+bevy_kira_audio = { version = "0.15.0", optional = true }
+bevy_ecs_ldtk = { version = "0.6.0", features = ["atlas"], optional = true }
+bevy_retrograde_ui = { version = "0.4", path = "crates/bevy_retrograde_ui", optional = true }
+bevy_retrograde_physics = { version = "0.4", path = "crates/bevy_retrograde_physics", optional = true }
 dashmap = "5.3.4"
 lazy_static = "1.4.0"
 
